@@ -1,4 +1,4 @@
-# generator-zf5
+# generator-zf5-vs for Visual Studio ASP.Net Vnext Integration
 
 [Yeoman](http://yeoman.io) generator for [Zurb Foundation 5](http://foundation.zurb.com/).
 
@@ -7,9 +7,11 @@
 
 ### Important note:
 
+**This is a fork from Julian's generator-zf5.**
+
 **Default option here will be Sass with Libsass (for now). But you can choose Ruby version on startup.**
 
-From Foundation 5.5.0:
+From Foundation 5.5.1:
 "Foundation is now compatible with Sass 3.4! Note: this removes Sass 3.2 compatability."
 [Foundation 5 Changelog](http://foundation.zurb.com/docs/changelog.html)
 

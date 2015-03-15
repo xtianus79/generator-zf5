@@ -24,7 +24,7 @@ var Zf5Generator = yeoman.generators.Base.extend({
 		this.log(this.yeoman);
 
 		this.log(chalk.bold.blue('=================='));
-		this.log(chalk.bold.blue(' Yo Foundation 5!'));
+		this.log(chalk.bold.orange(' Yo Foundation 5! for Visual Studio'));
 		this.log(chalk.bold.blue('=================='));
 
 		var prompts = {
@@ -91,6 +91,8 @@ var Zf5Generator = yeoman.generators.Base.extend({
 			this.copy('jade/footer.jade', 'app/footer.jade');
 		} else {
 			this.template('index.html', 'app/index.html');
+			this.template('index.cshtml', 'app/index.cshtml');
+			this.template('_layout.cshtml', 'app/_layout.cshtml');
 		}
 		this.mkdir('app/fonts');
 		this.mkdir('app/images');
