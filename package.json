@@ -1,15 +1,15 @@
 {
-  "name": "generator-zf5",
+  "name": "generator-zf5-VS",
   "version": "0.9.7",
-  "description": "Yeoman generator for Zurb Foundation 5",
+  "description": "Yeoman generator for Zurb Foundation 5 - Visual Studio asp.net Vnext Edition",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "juliancwirko/generator-zf5",
   "homepage": "https://github.com/juliancwirko/generator-zf5",
   "bugs": "https://github.com/juliancwirko/generator-zf5/issues",
   "author": {
-    "name": "Julian",
-    "email": "Ćwirko",
+    "name": "Christian",
+    "email": "xtianus@live.com",
     "url": "https://github.com/juliancwirko"
   },
   "engines": {
