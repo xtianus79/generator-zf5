@@ -24,7 +24,7 @@ var Zf5Generator = yeoman.generators.Base.extend({
 		this.log(this.yeoman);
 
 		this.log(chalk.bold.blue('=================='));
-		this.log(chalk.bold.orange(' Yo Foundation 5! for Visual Studio'));
+		this.log(chalk.bold.blue(' Yo Foundation 5! for Visual Studio'));
 		this.log(chalk.bold.blue('=================='));
 
 		var prompts = {
