@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd:'<%%= app %>/',
-					src: ['fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
+					src: ['fonts/**', '**/*.html', '**/*.cshtml', '!**/*.scss', '!bower_components/**'],
 					dest: '<%%= dist %>/'
 				}<% if (fontAwesome) { %> , {
 					expand: true,
@@ -105,14 +105,14 @@ module.exports = function(grunt) {
 		},
 
 		useminPrepare: {
-			html: ['<%%= app %>/index.html'],
+		    html: ['<%%= app %>/index.html', '<%%= app %>/index.cshtml', '<%%= app %>/_Layout.cshtml'],
 			options: {
 				dest: '<%%= dist %>'
 			}
 		},
 
 		usemin: {
-			html: ['<%%= dist %>/**/*.html', '!<%%= app %>/bower_components/**'],
+		    html: ['<%%= dist %>/**/*.html', '<%%= dist %>/**/*.cshtml', '!<%%= app %>/bower_components/**'],
 			css: ['<%%= dist %>/css/**/*.css'],
 			options: {
 				dirs: ['<%%= dist %>']
@@ -166,7 +166,7 @@ module.exports = function(grunt) {
 			target: {
 				src: [<% if (jade) { %>
 					'<%%= app %>/**/*.jade'<% } else { %>
-					'<%%= app %>/**/*.html'<% } %>
+					'<%%= app %>/**/*.html', '<%%= app %>/**/*.cshtml'<% } %>
 				],
 				exclude: [
 					'modernizr',<% if (fontAwesome) { %>
