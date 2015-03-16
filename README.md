@@ -191,8 +191,12 @@ Maybe someone (English speaker) would like to prepare tutorial for zf5 generator
 
 ### Contact
 
+[@xtianus](https://twitter.com/xtianus79) | [xtianus@live.com](mailto:xtianus@live.com)
+
 [@juliancwirko](https://twitter.com/JulianCwirko) | [julian.cwirko@gmail.com](mailto:julian.cwirko@gmail.com)
 
 ### Changelog
+
+..see [CHANGELOG.md](https://github.com/xtianus79/generator-zf5/blob/master/CHANGELOG.md) file
 
 ..see [CHANGELOG.md](https://github.com/juliancwirko/generator-zf5/blob/master/CHANGELOG.md) file
