@@ -9,7 +9,7 @@
 
 **This is a fork from Julian's generator-zf5.**
 
-**More information regarding VS 2015 Vnext instructins**
+**More information regarding VS 2015 Vnext instructions**
 
 **Default option here will be Sass with Libsass (for now). But you can choose Ruby version on startup.**
 
@@ -46,7 +46,7 @@ $ npm install -g generator-zf5-vs
 Finally, initiate the generator:
 
 ```
-$ yo zf5
+$ yo zf5-vs
 ```
 
 ## Grunt tasks:
