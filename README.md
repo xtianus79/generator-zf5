@@ -1,6 +1,6 @@
-# generator-zf5-vs for Visual Studio ASP.Net Vnext Integration
+# generator-zf5-vs
 
-[Yeoman](http://yeoman.io) generator for [Zurb Foundation 5](http://foundation.zurb.com/).
+[Yeoman](http://yeoman.io) generator for [Zurb Foundation 5](http://foundation.zurb.com/). & for Visual Studio ASP.Net Vnext Integration
 
 ### Basics (blog post)
 [Foundation 5 and Yeoman generator-zf5](http://julian.io/foundation-5-and-yeoman/)
@@ -9,6 +9,8 @@
 
 **This is a fork from Julian's generator-zf5.**
 
+**More information regarding VS 2015 Vnext instructins**
+
 **Default option here will be Sass with Libsass (for now). But you can choose Ruby version on startup.**
 
 From Foundation 5.5.1:
@@ -16,9 +18,9 @@ From Foundation 5.5.1:
 [Foundation 5 Changelog](http://foundation.zurb.com/docs/changelog.html)
 
 
-[![NPM](https://nodei.co/npm/generator-zf5.png?downloads=true)](https://nodei.co/npm/generator-zf5/)
+[![NPM](https://nodei.co/npm/generator-zf5-vs.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/generator-zf5-vs/)
 
-[![NPM](https://nodei.co/npm-dl/generator-zf5.png?height=2)](https://nodei.co/npm/generator-zf5/)
+[![NPM](https://nodei.co/npm-dl/generator-zf5-vs.png?height=2)](https://nodei.co/npm/generator-zf5-vs/)
 
 ## Yo Foundation 5!
 * Sass compiling
@@ -38,7 +40,7 @@ $ npm install -g yo
 To install generator-zf5 from npm, run:
 
 ```
-$ npm install -g generator-zf5
+$ npm install -g generator-zf5-vs
 ```
 
 Finally, initiate the generator:
