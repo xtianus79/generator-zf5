@@ -54,6 +54,16 @@ module.exports = function(grunt) {
 			}
 		},<% } %>
 
+        bower: {
+		    install: {
+		        options: {
+		            targetDir: "wwwroot/lib",
+		            layout: "byComponent",
+		            cleanTargetDir: true
+		        }
+		    }
+		},
+
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc'
@@ -68,6 +78,9 @@ module.exports = function(grunt) {
 			dist: {
 				src: ['<%%= dist %>/*']
 			},
+            bower: {
+                src: ['app/bower_components/*']
+			}
 		},
 		copy: {
 			dist: {
@@ -84,6 +97,26 @@ module.exports = function(grunt) {
 					filter: 'isFile'
 				} <% } %>]
 			},
+            app_files: {
+				files: [{
+					expand: true,
+					cwd:'<%= app %>/css',
+					src: ['app_override.css'],
+					dest: 'wwwroot/css'
+				}, {
+				    expand: true,
+				    cwd: '<%= app %>/js',
+				    src: ['app.js'],
+				    dest: 'wwwroot/js'
+				}]	
+            },
+            bower: {
+                files: [{
+	 	            expand: true,
+                    src: ['bower_components/**'],
+                    dest: 'app/'
+                } ]
+            }
 		},
 
 		imagemin: {
@@ -163,10 +196,10 @@ module.exports = function(grunt) {
 		},
 
 		wiredep: {
-			target: {
+			html: {
 				src: [<% if (jade) { %>
 					'<%%= app %>/**/*.jade'<% } else { %>
-					'<%%= app %>/**/*.html', '<%%= app %>/**/*.cshtml'<% } %>
+					'<%%= app %>/**/*.html'<% } %>
 				],
 				exclude: [
 					'modernizr',<% if (fontAwesome) { %>
@@ -174,21 +207,55 @@ module.exports = function(grunt) {
 					'jquery-placeholder',
 					'foundation'
 				]
-			}
+			},
+            cshtml: {
+                    src: [
+                        '<%= app %>/**/*.cshtml'
+                    ],
+
+                    fileTypes: {
+                    html: {
+                                block: /(([\s\t]*)<!--\s*bower:*(\S*)\s*-->)(\n|\r|.)*?(<!--\s*endbower\s*-->)/gi,
+                                detect: {
+                            js: /<script.*src=['"](.+)['"]>/gi,
+                            css: /<link.*href=['"](.+)['"]/gi
+		                            },
+                        replace: {
+                                js: '<script src="~/lib{{filePath}}"></script>',
+                                css: '<link rel="stylesheet" href="~/lib{{filePath}}" />'
+                        }
+                    }
+                    },
+
+                ignorePath: '../bower_components',
+                exclude: [
+                    'modernizr',
+                    'font-awesome',
+                    'jquery-placeholder',
+                    'foundation'
+                ]
+            }
+
 		}
 
 	});
 
 	<% if (jade) { %>grunt.registerTask('compile-jade', ['jade']);<% } %>
 	grunt.registerTask('compile-sass', ['sass']);
-	grunt.registerTask('bower-install', ['wiredep']);
+	grunt.registerTask('bower-install', ['wiredep', 'clean:bower', 'copy:bower']);
 	<% if (jade) { %>
-	grunt.registerTask('default', ['compile-jade', 'compile-sass', 'bower-install', 'connect:app', 'watch']);<% } else { %>
-	grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect:app', 'watch']);<% } %>
+	grunt.registerTask('default', ['bower:install'], ['compile-jade', 'compile-sass', 'bower-install', 'copy:app_files', 'connect:app', 'watch']);<% } else { %>
+	grunt.registerTask('default', ['bower:install'], ['compile-sass', 'bower-install', 'copy:app_files', 'connect:app', 'watch']);<% } %>
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
+	grunt.registerTask('bower-copy', ['copy:bower']);
+	grunt.registerTask('copy-app-files', ['copy:app_files']);
 	<% if (jade) { %>
-	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);<% } else { %>
-	grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);<% } %>
+	//grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);<% } else { %>
+	//grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);<% } %>
+
+	// The following line loads the grunt plugins.
+	// This line needs to be at the end of this this file.
+    grunt.loadNpmTasks("grunt-bower-task");
 
 };
