@@ -1,6 +1,6 @@
 {
   "name": "generator-zf5-vs",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Yeoman generator for Zurb Foundation 5 - Visual Studio asp.net Vnext Edition",
   "license": "MIT",
   "main": "app/index.js",
