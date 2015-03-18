@@ -33,6 +33,19 @@ From Foundation 5.5.1:
 
 ## Getting Started
 
+### Important instructions for VS Vnext:
+
+**When finished with CLI instructions below take these files and folders and copy and overwrite the following:
+
+* app -- Folder
+* dist  -- Empty Folder
+* .bowerrc -- file
+* .gitignore -=- file
+* .jshintrc -- file
+* bower.json -- file
+* Gruntfile.js -- file
+* package.json  -- file
+
 ```
 $ npm install -g yo
 ```
