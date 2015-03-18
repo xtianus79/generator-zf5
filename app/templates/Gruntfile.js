@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 			},
             bower: {
                 src: ['app/bower_components/*']
-			}
+			},
 		},
 		copy: {
 			dist: {
@@ -115,8 +115,8 @@ module.exports = function(grunt) {
 	 	            expand: true,
                     src: ['bower_components/**'],
                     dest: 'app/'
-                } ]
-            }
+                }]
+            },
 		},
 
 		imagemin: {
