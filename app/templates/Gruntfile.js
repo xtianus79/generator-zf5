@@ -100,12 +100,12 @@ module.exports = function(grunt) {
             app_files: {
 				files: [{
 					expand: true,
-					cwd:'<%= app %>/css',
+					cwd:'<%%= app %>/css',
 					src: ['app_override.css'],
 					dest: 'wwwroot/css'
 				}, {
 				    expand: true,
-				    cwd: '<%= app %>/js',
+				    cwd: '<%%= app %>/js',
 				    src: ['app.js'],
 				    dest: 'wwwroot/js'
 				}]	
@@ -210,7 +210,7 @@ module.exports = function(grunt) {
 			},
             cshtml: {
                     src: [
-                        '<%= app %>/**/*.cshtml'
+                        '<%%= app %>/**/*.cshtml'
                     ],
 
                     fileTypes: {
