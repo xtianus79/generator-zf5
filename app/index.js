@@ -92,7 +92,7 @@ var Zf5Generator = yeoman.generators.Base.extend({
 		} else {
 			this.template('index.html', 'app/index.html');
 			this.template('index.cshtml', 'app/index.cshtml');
-			this.template('_layout.cshtml', 'app/_Layout.cshtml');
+			this.template('_Layout.cshtml', 'app/_Layout.cshtml');
 		}
 		this.mkdir('app/fonts');
 		this.mkdir('app/images');
