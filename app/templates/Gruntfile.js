@@ -298,8 +298,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('bower-copy', ['copy:bower']);
 	grunt.registerTask('copy-app-files', ['copy:app_files']);
 	<% if (jade) { %>
-	    //grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'copy:wwwroot']);<% } else { %>
-	    //grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'copy:wwwroot']);<% } %>
+	//grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'copy:wwwroot']);<% } else { %>
+	//grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'copy:wwwroot']);<% } %>
 
 	// The following line loads the grunt plugins.
 	// This line needs to be at the end of this this file.
