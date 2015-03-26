@@ -78,6 +78,8 @@ var Zf5Generator = yeoman.generators.Base.extend({
 	app: function () {
 		this.mkdir('dist');
 		this.mkdir('app');
+		this.mkdir('includes');
+		this.mkdir('wwwroot/dist');
 		this.template('bower.json', 'bower.json');
 		this.template('package.json', 'package.json');
 		this.template('Gruntfile.js', 'Gruntfile.js');
@@ -92,7 +94,7 @@ var Zf5Generator = yeoman.generators.Base.extend({
 		} else {
 			this.template('index.html', 'app/index.html');
 			this.template('index.cshtml', 'app/index.cshtml');
-			this.template('_layout.cshtml', 'app/_Layout.cshtml');
+			this.template('_Layout.cshtml', 'app/_Layout.cshtml');
 		}
 		this.mkdir('app/fonts');
 		this.mkdir('app/images');
