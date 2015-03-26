@@ -82,7 +82,7 @@ var Zf5Generator = yeoman.generators.Base.extend({
 		this.mkdir('wwwroot/dist');
 		this.template('bower.json', 'bower.json');
 		this.template('package.json', 'package.json');
-		this.template('Gruntfile.js', 'Gruntfile.js');
+		this.template('gruntfile.js', 'gruntfile.js');
 		this.copy('.jshintrc', '.jshintrc');
 		this.copy('.bowerrc', '.bowerrc');
 		this.copy('gitignore', '.gitignore');
